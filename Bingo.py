@@ -20,13 +20,13 @@ if len(balls)%len(bingo_letters) != 0:
 number_association = { }
 board_length = len(bingo_letters)
 number_of_balls = len(balls)
-for i in range(len(bingo_letters)):
+for i in range(board_length):
     for j in range( i*(number_of_balls//board_length)+1,  (i+1)*(number_of_balls//board_length)+1 ):
         number_association[balls[j-1]] = bingo_letters[i]
 # print(number_association)
 
 # Make a random calling 
-call_order = random.sample(balls, k=len(balls))
+call_order = random.sample(balls, k=number_of_balls)
 
 # # If you want to see the whole order, you can comment out one of these.
 # print(call_order)
